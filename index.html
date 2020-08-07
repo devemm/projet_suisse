@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body >
+
+<div id="exploreMap">
+    <div id="infoPopup" data-hidden="true">
+        <div id="popup">
+            <div id="close" onclick="closeIt()">c</div>
+            <div id="contentPopup"></div>
+        </div>
+    </div>
+    <div class="mapI">
+        <img src="images/carteBackdetour.png" id="scene">
+    <div class="points">
+        <div class="pointCarte black a" data-point="1" data-popup="a"></div>
+        <div class="pointCarte black b" data-popup="b" data-point="3"></div>
+        <div class="pointCarte red c" data-point="3" data-popup="c"></div>
+        <div class="pointCarte red d" data-point="2" data-popup="d"></div>
+        <div class="pointCarte red e" data-point="1" data-popup="e"></div>
+        <div class="pointCarte red f" data-point="2" data-popup="f"></div>
+        <div class="pointCarte black g" data-point="3" data-popup="g"></div>
+        <div class="pointCarte black h" data-point="3" data-popup="h"></div>
+    </div>
+    </div>
+    <div id="contentRa">
+    </div>
+    <div class="boutons">
+        <div class="up">
+            <div id="retourHome" onclick="retourHome()" data-info="Accueil">f</div>
+            <div id="green" data-info="Réalité augmenté">1</div>
+        </div>
+        <div id="more">
+            <div id="troisB">
+                <div onclick="zoomToo(700,400,2)" class="zoomIn white e " data-info="Zoomer">a</div>
+                <div onclick="zoomToo(700,400,0.5)" class="zoomOut white e " data-info="Dézoomer">b</div>
+                <div class="refresh white e" onclick="resetMapZoom()" data-info="Réinitialiser">k</div>
+            </div>
+            <div class="what white" data-info="Légende">5</div>
+        </div>
+    </div>
+</div>
+
+<div id="loader" class="center"></div>
+
+<div id="homepage">
+    <header>
+        <div class="map"></div>
+        <!-- les trois logos -->
+        <img class="logoHeader un" src="images/logos/logoci-partner.png" alt="logo : courrier international">
+        <!-- <img class="logoHeader deux" src="images/logos/logoAnimoptimized.gif" srcset="images/logos/logoAnimoptimized2.gif 350w" alt="logo : la Suisse augmentée"> -->
+        <img class="logoHeader trois" src="images/logos/logosuisse-partner.png" alt="logo : la Suisse tout naturellement">
+        <div id="scroll">   
+            <input class="boutonExplorer hoverRed" type="submit" value="Explorez la carte" onclick="showMap()">
+            <input class="hoverRed" type="submit" value="Lire les articles">
+        </div>
+    </header>
+    <!-- <div id="carte"> -->
+    <!-- la carte interactive et le paragraphe de présentation -->
+        <!-- <img src="images/carteBack.jpg" srcset="images/carteBackmobile.jpg 750w, images/carteBackipad.jpg 1000w"  alt="carte interactive"> -->
+        <!-- <img src="test2.gif" alt=""> -->
+        <div class="paraPresentation">
+
+            <h2 class="h2">Suisse Augmentée</h2>
+            <p>
+                Courrier international et Suisse Tourisme s’associent pour vous présenter la <b>Suisse en réalité augmentée</b>. Fribourg Région, Vaud - Région du Léman, Berne et l’Oberland bernois, Valais, Jura & Trois-Lacs, explorez les régions suisses, leur culture et leur gastronomie à travers des articles de la presse étrangère et une carte en réalité augmenté.
+
+                Donnez vie à la carte de la Suisse qui se trouve à l'intérieur de l'hebdomadaire Courrier international n°1543 du 28 mai 2020 en scannant le code QR avec votre smartphone ou votre tablette.
+                
+                Une version interactive de la carte est aussi à découvrir <a href="">ici</a>.
+            </p>
+            <p>
+                Ouvrez la carte de la Suisse et scannez le QR code pour démarrer l’expérience en réalité augmentée. 
+            </p>
+        </div>
+        
+    <!-- </div> -->
+</div>
+
+<!-- deuxième partie de la page : les articles  -->
+
+<div id="pageDeux">
+    <div class="info">
+        <h2 class="h2">Cinq régions suisses vues par les médias étrangers</h2>
+        <p>Du quotidien espagnol El Mundo au Telegraph de Londres, la presse européenne revisite les plus belles régions helvétiques.</p>
+    </div>
+    <div class="displayCards">
+        <div class="cards">
+            <img data-img="images/Article1-LAUSANNE_optimized.jpg" alt="illustration article" id="image1" class="image">
+            <h3 class="titreCard">Les britanniques redécouvrent Lausanne</h3>
+            <p class="sourceCard">The télépraph, Londres</p>
+        </div>
+        <div class="cards">
+            <img data-img="images/Article2-GRUYERES_optimized.jpg" alt="illustration article" id="image2" class="image">
+            <h3 class="titreCard">Histoire d'une ville et d'un fromage : Gruyères</h3>
+            <p class="sourceCard">ABC, Madrid</p>
+        </div>
+        <div class="cards">
+            <img data-img="images/Article3-VALAIS_optimized.jpg" alt="illustration article" id="image3" class="image">
+            <h3 class="titreCard">La culture palpite en Valais</h3>
+            <p class="sourceCard">Le courrier, Genève</p>
+        </div>
+        <div class="cards">
+            <img data-img="images/Article4-BERNE_optimized.jpg" alt="illustration article" id="image4" class="image">
+            <h3 class="titreCard">Visite de Berne (top 10)</h3>
+            <p class="sourceCard">La Vanguardia, Barcelone</p>
+        </div>
+        <div class="cards">
+            <img data-img="images/Article5-BIENNE_optimized.jpg" alt="illustration article" id="image5" class="image">
+            <h3 class="titreCard">Visite de Bienne</h3>
+            <p class="sourceCard">El Mundo, Madrid</p>
+        </div>
+        <div class="cards">
+            <img data-img="images/Article6-crédit-swiss_optimized.jpg" alt="illustration article" id="image6" class="image">
+            <h3 class="titreCard">À bord du Bernina express</h3>
+            <p class="sourceCard">Jessica Rbineau</p>
+        </div>
+    </div>
+</div>
+
+
+<script src='https://unpkg.com/panzoom@9.2.4/dist/panzoom.min.js'></script>
+<script src="script.js"></script>
+</body>
+</html>
+
